@@ -1,0 +1,31 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "Angelle's commercial web application",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mailgun": "^0.5.0",
+    "mongoose": "^5.6.1",
+    "nodemailer": "^6.2.1",
+    "nodemailer-mailgun-transport": "^1.4.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcarver515/Project3.git"
+  },
+  "author": "Robert Grant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rcarver515/Project3/issues"
+  },
+  "homepage": "https://github.com/rcarver515/Project3#readme"
+}
