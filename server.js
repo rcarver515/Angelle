@@ -1,10 +1,16 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+// const Mailgun = require("mailgun-js");
 const PORT = process.env.PORT || 8080;
+
+var DOMAIN = 'sandboxb878519befff4ab5bf41994adb529b11.mailgun.org	';
+var mailgun = require('mailgun-js')({ apiKey: process.env.api_key, domain: DOMAIN });
 
 // Bringing the sendMail function.
 const sendMail = require('./mail');
+
+require('dotenv').config()
 
 const app = express();
 
@@ -36,6 +42,18 @@ app.post('/email', (req, res) => {
     }
   });
 });
+mailgun.post(
+  '/routes',
+ {"priority": 0, 
+ "description": 'Sample route',
+  "expression": 'catch_all()', 
+  "action": 'forward("tchalla575@gmail.com")', 
+  "action": 'stop()'}, 
+  function (error, body) {
+  console.log(body);
+});
+
+
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
